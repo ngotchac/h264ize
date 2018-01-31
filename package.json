@@ -1,19 +1,19 @@
 {
-  "name": "h265ize",
+  "name": "h264ize",
   "version": "0.5.0",
   "mode": "development",
-  "description": "h265ize is a fire and forget weapon. A nodejs utility utilizing ffmpeg to encode large quantities of videos with the hevc codec.",
-  "main": "h265ize",
+  "description": "h264ize is a fire and forget weapon. A nodejs utility utilizing ffmpeg to encode large quantities of videos with the h.264 codec.",
+  "main": "h264ize",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec test.js"
   },
-  "bin": "h265ize",
+  "bin": "h264ize",
   "directories": {
     "lib": "lib"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FallingSnow/h265ize.git"
+    "url": "git+https://github.com/ngotchac/h264ize.git"
   },
   "keywords": [
     "video",
@@ -25,9 +25,9 @@
   "author": "Ayrton Sparling",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FallingSnow/h265ize/issues"
+    "url": "https://github.com/ngotchac/h264ize/issues"
   },
-  "homepage": "https://github.com/FallingSnow/h265ize#readme",
+  "homepage": "https://github.com/ngotchac/h264ize#readme",
   "dependencies": {
     "bluebird": "^3.4.6",
     "chokidar": "^1.6.1",

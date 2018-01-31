@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const h265ize = require('./h265ize');
+const h264ize = require('./h264ize');
 
 const testVideoPath = 'test/sintel-test.mkv';
 
@@ -19,7 +19,7 @@ let Encoder, Video;
 describe('Encoder', function() {
     this.timeout(1000);
     it('should return an instance of Encoder', function() {
-        assert.instanceOf(Encoder = new h265ize.Encoder(nullLogger), h265ize.Encoder, 'new h265ize.Encoder() did not return an instance of h265ize.Encoder');
+        assert.instanceOf(Encoder = new h264ize.Encoder(nullLogger), h264ize.Encoder, 'new h264ize.Encoder() did not return an instance of h264ize.Encoder');
     });
     it('should add a video by path', function() {
         assert.includeDeepMembers(Encoder.queue, [Encoder.addVideo(testVideoPath)], 'video not added');
@@ -45,9 +45,9 @@ describe('Video', function() {
     this.timeout(1000);
     it('should return an instance of Video', function() {
         assert.doesNotThrow(function() {
-            return new h265ize.Video(testVideoPath);
-        }, "Error while initializing h265ize.Video");
-        assert.instanceOf(Video = new h265ize.Video(testVideoPath), h265ize.Video, 'new h265ize.Encoder() is not an instance of h265ize.Encoder');
+            return new h264ize.Video(testVideoPath);
+        }, "Error while initializing h264ize.Video");
+        assert.instanceOf(Video = new h264ize.Video(testVideoPath), h264ize.Video, 'new h264ize.Encoder() is not an instance of h264ize.Encoder');
     });
     it('should add video to encoder', function() {
         Encoder.addVideo(Video);
@@ -77,7 +77,7 @@ describe('Video', function() {
             assert.isTrue(Video.status === 'finished');
         }
 
-        Video = new h265ize.Video(testVideoPath, options)
+        Video = new h264ize.Video(testVideoPath, options)
             .on('finished', handler)
             .on('failed', handler);
     });

@@ -1,14 +1,12 @@
-# h265ize
+# h264ize
 
-h265ize is a fire and forget weapon. A nodejs utility utilizing ffmpeg to encode large quantities of videos with the hevc codec. For more information visit [ayrton.sparling.us](https://ayrton.sparling.us/index.php/ultimate-x265hevc-encoding-script-h265ize/ "Ayrton Sparling").
+h264ize is a fire and forget weapon. A nodejs utility utilizing ffmpeg to encode large quantities of videos with the h.264 codec.
 
-[![NPM License](https://img.shields.io/npm/l/h265ize.svg)](https://raw.githubusercontent.com/FallingSnow/h265ize/master/LICENSE) [![NPM Version](https://img.shields.io/npm/v/h265ize.svg)](https://www.npmjs.com/package/h265ize)
+[![NPM License](https://img.shields.io/npm/l/h265ize.svg)](https://raw.githubusercontent.com/ngotchac/h264ize/master/LICENSE) [![NPM Version](https://img.shields.io/npm/v/h265ize.svg)](https://www.npmjs.com/package/h264ize)
 
-[![NPM Version](https://nodei.co/npm/h265ize.png)](https://www.npmjs.com/package/h265ize)
+[![NPM Version](https://nodei.co/npm/h264ize.png)](https://www.npmjs.com/package/h264ize)
 
-If you have any questions or h265ize isn't working for you, feel free to open an issue.
-
-> _h265ize will support [AV1](https://en.wikipedia.org/wiki/AOMedia_Video_1) once encoder support becomes stable & plex supports decoding it._
+If you have any questions or h264ize isn't working for you, feel free to open an issue.
 
 ## Features
 

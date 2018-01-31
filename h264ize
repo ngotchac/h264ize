@@ -22,7 +22,7 @@ const chokidar = require('chokidar');
 
 const helpers = require(Path.join(__dirname, 'lib/helpers.js'));
 const packageSettings = require(Path.join(__dirname, 'package.json'));
-const h265izeLogger = require('./lib/logger.js');
+const h264izeLogger = require('./lib/logger.js');
 
 /* INIT */
 
@@ -39,7 +39,7 @@ Promise.config({
     monitoring: false
 });
 
-process.H265IZE_STOP_REQUEST_COUNT = 0;
+process.H264IZE_STOP_REQUEST_COUNT = 0;
 
 /* --------------------------------- CLASSES -------------------------------- */
 
@@ -48,7 +48,7 @@ const Encoder = require('./lib/classes/encoder.js');
 
 /* ------------------------------ END CLASSES ------------------------------- */
 
-let h265ize = {
+let h264ize = {
     Encoder: Encoder,
     Video: Video,
     _helpers: helpers
@@ -67,11 +67,11 @@ function runCli() {
         // const consoleLogger = require('./lib/consoleLogger.js');
         // let logger = require('./lib/consoleLogger.js');
         if (args.debug)
-            logger = h265izeLogger('debug');
+            logger = h264izeLogger('debug');
         else if (args.verbose)
-            logger = h265izeLogger('verbose');
+            logger = h264izeLogger('verbose');
         else
-            logger = h265izeLogger('info');
+            logger = h264izeLogger('info');
 
         logger.debug('Command Line: ' + process.argv.join(' '));
 
@@ -120,7 +120,7 @@ function runCli() {
             if (typeof watcher !== 'undefined')
                 watcher.close();
 
-            if (process.H265IZE_STOP_REQUEST_COUNT > 1) {
+            if (process.H264IZE_STOP_REQUEST_COUNT > 1) {
                 logger.error('Shutdown signal more than once. Shutting down immediately...')
                 return process.exit(1);
             }
@@ -149,7 +149,7 @@ function runCli() {
                     readline.clearLine(process.stdout, 0);
                     readline.moveCursor(process.stdout, -1000, 0);
                     logger.warn('Caught signal interupt! Attempted to clean up.');
-                    process.H265IZE_STOP_REQUEST_COUNT++;
+                    process.H264IZE_STOP_REQUEST_COUNT++;
                     shutdown();
                 } else if (key && key.name == 'p') {
 
@@ -279,4 +279,4 @@ if (!module.parent) {
 }
 /* ---------------------- END Command Line Interface ------------------------ */
 
-module.exports = h265ize;
+module.exports = h264ize;
